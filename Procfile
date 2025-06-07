@@ -1,0 +1,1 @@
+web: java -jar target/spring-boot-starter-0.0.1-SNAPSHOT.jar
