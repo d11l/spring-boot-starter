@@ -7,11 +7,8 @@ import io.jsonwebtoken.security.Keys;
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
-import sa.abdulrahman.starter.models.CustomUserDetails;
-
 import javax.crypto.SecretKey;
 import javax.crypto.spec.SecretKeySpec;
 import java.nio.charset.StandardCharsets;
@@ -43,25 +40,6 @@ public class Jwt {
         return key;
     }
 
-    private String generateToken(Authentication authentication, List<String> roles, long expirationMs) {
-        String username = authentication.getName();
-        Calendar calendar = Calendar.getInstance();
-        calendar.setTime(new Date());
-        calendar.add(Calendar.MILLISECOND, (int) expirationMs);
-        Date expireDate = calendar.getTime();
-
-        Map<String, Object> claims = new HashMap<>();
-        claims.put("roles", roles);
-        claims.put("user_id", ((CustomUserDetails) authentication.getPrincipal()).getId());
-
-        return Jwts.builder()
-                .setSubject(username)
-                .addClaims(claims)
-                .setIssuedAt( new Date())
-                .setExpiration(expireDate)
-                .signWith(getKey(),SignatureAlgorithm.HS512)
-                .compact();
-    }
 
     public boolean validateToken(String token) {
         try {
