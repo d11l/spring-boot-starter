@@ -17,7 +17,7 @@ import sa.abdulrahman.starter.models.Role;
 import sa.abdulrahman.starter.models.User;
 import sa.abdulrahman.starter.records.AuthResponse;
 import sa.abdulrahman.starter.repositories.UserDetailsRepository;
-import sa.abdulrahman.starter.securety.jwt.Jwt;
+import sa.abdulrahman.starter.security.jwt.Jwt;
 import sa.abdulrahman.starter.services.integrations.EmailService;
 import java.time.LocalDateTime;
 

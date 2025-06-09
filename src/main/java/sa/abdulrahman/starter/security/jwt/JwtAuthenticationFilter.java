@@ -1,4 +1,4 @@
-package sa.abdulrahman.starter.securety.jwt;
+package sa.abdulrahman.starter.security.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.filter.OncePerRequestFilter;
 import sa.abdulrahman.starter.models.CustomUserDetails;
-import sa.abdulrahman.starter.securety.CustomUserDetailsService;
+import sa.abdulrahman.starter.security.CustomUserDetailsService;
 
 import java.io.IOException;
 

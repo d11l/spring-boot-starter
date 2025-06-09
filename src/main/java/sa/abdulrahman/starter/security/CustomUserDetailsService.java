@@ -1,4 +1,4 @@
-package sa.abdulrahman.starter.securety;
+package sa.abdulrahman.starter.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.userdetails.UserDetailsService;
