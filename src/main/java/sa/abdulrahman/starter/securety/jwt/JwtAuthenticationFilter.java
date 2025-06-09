@@ -26,12 +26,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     @Override
     protected boolean shouldNotFilter(HttpServletRequest request) {
-        return request.getRequestURI().startsWith("/api/v1/packages/public");
+        String path = request.getRequestURI();
+        return path.matches("/api/v1/[^/]+/public.*"); // Ex: Skip "/api/v1/products/public"
     }
 
     @Override
     protected void doFilterInternal(@NonNull HttpServletRequest request, @NonNull HttpServletResponse response, @NonNull FilterChain filterChain) throws ServletException, IOException {
-        String token = getJWTFromRequest(request);
+        String token = jwt.getJWTFromRequest(request);
 
         if(StringUtils.hasText(token) && jwt.validateToken(token)) {
             String username = jwt.extractUsername(token);
@@ -51,11 +52,4 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         filterChain.doFilter(request, response);
     }
 
-    private String getJWTFromRequest(HttpServletRequest request) {
-        String token = request.getHeader("Authorization");
-        if(StringUtils.hasText(token) && token.startsWith("Bearer ")) {
-            return token.substring(7);
-        }
-        return null;
-    }
 }

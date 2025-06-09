@@ -23,6 +23,7 @@ A Spring Boot starter project with built-in authentication, user management, and
   - Email service (SMTP)
   - SMS service (Msegat)
   - S3 compatible storage (Digital Ocean Spaces or AWS)
+  - AI integration (OpenAI/Groq with Spring AI)
 
 - **Database**
   - JPA/Hibernate ORM
@@ -39,6 +40,7 @@ A Spring Boot starter project with built-in authentication, user management, and
 - Spring Boot 3.4.4
 - Spring Security
 - Spring Data JPA
+- Spring AI
 - JWT (JSON Web Tokens)
 - Lombok
 - AWS S3 SDK
@@ -138,6 +140,14 @@ msegat.api.key=YOUR_API_KEY
 jwt.secret=YourSecretKeyHereMakeItLongAndComplexForBetterSecurity
 jwt.expiration=86400000
 jwt.refresh.expiration=604800000
+```
+
+### AI Configuration
+
+```properties
+spring.ai.openai.api-key=API_KEY
+spring.ai.openai.base-url=https://api.groq.com/openai
+spring.ai.openai.chat.options.model=llama3-70b-8192
 ```
 
 ## API Endpoints
