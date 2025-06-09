@@ -1,4 +1,4 @@
-package sa.abdulrahman.starter.securety.jwt;
+package sa.abdulrahman.starter.security.jwt;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

@@ -1,4 +1,4 @@
-package sa.abdulrahman.starter.securety.jwt;
+package sa.abdulrahman.starter.security.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

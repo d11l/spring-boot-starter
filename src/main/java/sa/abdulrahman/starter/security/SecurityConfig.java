@@ -1,4 +1,4 @@
-package sa.abdulrahman.starter.securety;
+package sa.abdulrahman.starter.security;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -18,8 +18,8 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import sa.abdulrahman.starter.constants.URLs;
-import sa.abdulrahman.starter.securety.jwt.JwtAuthEntryPoint;
-import sa.abdulrahman.starter.securety.jwt.JwtAuthenticationFilter;
+import sa.abdulrahman.starter.security.jwt.JwtAuthEntryPoint;
+import sa.abdulrahman.starter.security.jwt.JwtAuthenticationFilter;
 
 import static sa.abdulrahman.starter.constants.Roles.ADMIN;
 
