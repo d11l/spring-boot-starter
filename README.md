@@ -177,4 +177,4 @@ spring.ai.openai.chat.options.model=llama3-70b-8192
 
 ## Contact
 
-Developer - [abdulrahman.radhi.11@gmail.com](mailto:abdulrahman.radhi.11@gmail.com)
+[abdulrahman.radhi.11@gmail.com](mailto:abdulrahman.radhi.11@gmail.com)
