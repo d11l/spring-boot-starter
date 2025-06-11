@@ -46,10 +46,9 @@ public class SecurityConfig {
                 )
                 .authorizeHttpRequests(auth -> auth
                         // Public Access
-                        .requestMatchers(URLs.AUTH.BASE_URL_PUBLIC).permitAll()
+                        .requestMatchers(URLs.PUBLIC_URLs).permitAll()
                         // Private Access
-                        // Admin Access
-                        .requestMatchers("/api/v1/admin/actuator").hasRole(ADMIN)
+                        .requestMatchers(URLs.ADMIN.BASE_URL_ACCESS).hasRole(ADMIN)
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);

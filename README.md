@@ -25,6 +25,10 @@ A Spring Boot starter project with built-in authentication, user management, and
   - S3 compatible storage (Digital Ocean Spaces or AWS)
   - AI integration (OpenAI/Groq with Spring AI)
 
+- **API Documentation**
+  - Swagger UI for interactive API documentation
+  - OpenAPI 3.0 specification
+
 - **Database**
   - JPA/Hibernate ORM
   - H2 database for development
@@ -41,6 +45,7 @@ A Spring Boot starter project with built-in authentication, user management, and
 - Spring Security
 - Spring Data JPA
 - Spring AI
+- SpringDoc OpenAPI (Swagger)
 - JWT (JSON Web Tokens)
 - Lombok
 - AWS S3 SDK
@@ -150,6 +155,20 @@ spring.ai.openai.base-url=https://api.groq.com/openai
 spring.ai.openai.chat.options.model=llama3-70b-8192
 ```
 
+## API Documentation
+
+The project includes Swagger UI for interactive API documentation, which allows you to:
+
+- Explore all available endpoints
+- View request/response models
+- Test API endpoints directly from the browser
+- Understand authentication requirements
+
+### Accessing Swagger UI
+
+- **Development**: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+- **Production**: [https://your-domain.com/swagger-ui.html](https://your-domain.com/swagger-ui.html)
+
 ## API Endpoints
 
 ### Authentication
@@ -177,4 +196,4 @@ spring.ai.openai.chat.options.model=llama3-70b-8192
 
 ## Contact
 
-Developer - [abdulrahman.radhi.11@gmail.com](mailto:abdulrahman.radhi.11@gmail.com)
+[abdulrahman.radhi.11@gmail.com](mailto:abdulrahman.radhi.11@gmail.com)
