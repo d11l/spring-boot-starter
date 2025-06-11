@@ -19,4 +19,12 @@ public class URLs {
         public static final String UPDATE_PROFILE ="/update-profile";
     }
 
+    public static class ADMIN {
+        public static final String BASE_URL ="/api/v1/admin";
+        public static final String BASE_URL_ACCESS ="/api/v1/admin/**";
+        public static final String ACTUATOR ="/actuator";
+    }
+
+    public static final String[] PUBLIC_URLs = { AUTH.BASE_URL_PUBLIC, "/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html" };
+
 }
