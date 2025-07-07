@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sa.abdulrahman.starter.dto.auth.*;
 import sa.abdulrahman.starter.records.AuthResponse;
+import sa.abdulrahman.starter.records.OTPResponse;
 import sa.abdulrahman.starter.services.AuthService;
 
 import static sa.abdulrahman.starter.constants.URLs.AUTH.*;
@@ -23,9 +24,8 @@ public class AuthController {
     }
 
     @PostMapping(REQUEST_OTP)
-    public ResponseEntity<String> requestOTP(@Valid @RequestBody OTPRequest request) {
-        authService.requestOTP(request);
-        return ResponseEntity.ok("OTP sent successfully");
+    public ResponseEntity<OTPResponse> requestOTP(@Valid @RequestBody OTPRequest request) {
+        return ResponseEntity.ok(authService.requestOTP(request));
     }
 
     @PostMapping(LOGIN_OTP)
