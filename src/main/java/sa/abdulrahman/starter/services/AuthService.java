@@ -16,6 +16,7 @@ import sa.abdulrahman.starter.models.CustomUserDetails;
 import sa.abdulrahman.starter.models.Role;
 import sa.abdulrahman.starter.models.User;
 import sa.abdulrahman.starter.records.AuthResponse;
+import sa.abdulrahman.starter.records.OTPResponse;
 import sa.abdulrahman.starter.repositories.UserDetailsRepository;
 import sa.abdulrahman.starter.security.jwt.Jwt;
 import sa.abdulrahman.starter.services.integrations.EmailService;
@@ -86,10 +87,13 @@ public class AuthService {
         }
     }
 
-    public void requestOTP(OTPRequest request) {
-        log.info("OTP request for username: {}", request.getUsername());
+    public OTPResponse requestOTP(OTPRequest request) {
+        String username = request.getUsername();
+        log.info("OTP request for username: {}", username);
         otpService.generateAndSendOTP(request.getUsername());
+        boolean userExists = userDetailsRepository.existsByUsername(username);
         log.info("OTP generated and sent for username: {}", request.getUsername());
+        return new OTPResponse("OTP Sent Successfully", userExists ? "login" : "register");
     }
 
     public AuthResponse loginWithOTP(@Valid @RequestBody UsernameAndOTP request) {
