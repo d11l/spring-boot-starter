@@ -96,7 +96,7 @@ public class AuthService {
         return new OTPResponse("OTP Sent Successfully", userExists ? "login" : "register");
     }
 
-    public AuthResponse loginWithOTP(@Valid @RequestBody UsernameAndOTP request) {
+    public AuthResponse loginWithOTP(UsernameAndOTP request) {
         log.info("Login with OTP attempt for username: {}", request.getUsername());
 
         otpService.validateOTP(request.getUsername(), request.getOtp());
