@@ -1,6 +1,5 @@
 package sa.abdulrahman.starter.services;
 
-import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -9,9 +8,11 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 import sa.abdulrahman.starter.dto.auth.*;
-import sa.abdulrahman.starter.exceptions.*;
+import sa.abdulrahman.starter.exceptions.InvalidTokenException;
+import sa.abdulrahman.starter.exceptions.ResourceNotFoundException;
+import sa.abdulrahman.starter.exceptions.UnauthorizedException;
+import sa.abdulrahman.starter.exceptions.UsernameAlreadyTakenException;
 import sa.abdulrahman.starter.models.CustomUserDetails;
 import sa.abdulrahman.starter.models.Role;
 import sa.abdulrahman.starter.models.User;
@@ -20,6 +21,7 @@ import sa.abdulrahman.starter.records.OTPResponse;
 import sa.abdulrahman.starter.repositories.UserDetailsRepository;
 import sa.abdulrahman.starter.security.jwt.Jwt;
 import sa.abdulrahman.starter.services.integrations.EmailService;
+
 import java.time.LocalDateTime;
 
 @Service

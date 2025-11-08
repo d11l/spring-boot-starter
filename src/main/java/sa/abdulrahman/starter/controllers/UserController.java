@@ -3,6 +3,7 @@ package sa.abdulrahman.starter.controllers;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -30,7 +31,7 @@ public class UserController {
         return ResponseEntity.ok("Password reset successful.");
     }
 
-    @PostMapping(UPDATE_PROFILE)
+    @PutMapping(UPDATE_PROFILE)
     public ResponseEntity<?> updateProfile(@RequestBody @Valid UserUpdateDTO updateDTO) {
         Profile updatedProfile = userService.updateUserProfile(getCurrentUserId(), updateDTO);
         return ResponseEntity.ok(updatedProfile);
